@@ -22,9 +22,15 @@
   <a href="https://www.btacertified.com/dlink/6e720f7b18c2d730400fcb4af9c41121e9c7c6ed43cdfc3c3721d534baf81548/certdisplayhash" target="_blank" rel="noreferrer"> 
   <img src="https://bta-site-images.s3.us-east-2.amazonaws.com/v1-sa.png" alt="aws" width="150" height="150"/> </a>
   
-  <a href="https://www.credential.net/c7494fc5-8739-41f9-9ef2-90d781618bac#gs.wudxk4" target="_blank" rel="noreferrer"> 
+   <a href="https://www.credential.net/8049f0a2-8454-43d3-a0f3-bbe57207ef2c" target="_blank" rel="noreferrer"> 
+  <img src="https://api.accredible.com/v1/frontend/credential_website_embed_image/badge/53556448" alt="aws" width="150" height="150"/> </a>
+  
+  <a href="https://www.credential.net/c7494fc5-8739-41f9-9ef2-90d781618bac" target="_blank" rel="noreferrer"> 
   <img src="https://api.accredible.com/v1/frontend/credential_website_embed_image/badge/49082087" alt="aws" width="150" height="150"/> </a>
   
+  <a href="https://www.credly.com/badges/9fe7bea7-2575-43df-9585-5632c0d92f89?source=linked_in_profile" target="_blank" rel="noreferrer"> 
+  <img src="https://images.credly.com/size/680x680/images/3c44b901-a2bd-41e7-8a10-24cba9ddd85d/Training_Badges_Master_Node-ServDev.png" alt="aws" width="150" height="150"/> </a>
+
 <a href="https://www.credly.com/badges/e4925681-d5b6-4bdb-8e21-9444541fdc19/linked_in_profile" target="_blank" rel="noreferrer"> 
   <img src="https://images.credly.com/size/220x220/images/00634f82-b07f-4bbd-a6bb-53de397fc3a6/image.png" alt="aws" width="150" height="150"/> </a>
 
@@ -42,6 +48,9 @@
   
   <a href="https://www.credly.com/badges/9b22e49d-ff1d-438d-81c6-4bf855d3ff5e?source=linked_in_profile" target="_blank" rel="noreferrer"> 
   <img src="https://images.credly.com/size/220x220/images/848cb2dd-975a-4681-9494-66aaea1def3a/LSL-P-badge-verified.png" alt="aws" width="150" height="150"/> </a>
+  
+  <a href="https://www.credly.com/badges/65ba9fbc-4576-4a7d-bfb5-fb87d847bba2/linked_in_profile" target="_blank" rel="noreferrer"> 
+  <img src="https://images.credly.com/size/680x680/images/82f48b41-92a7-446e-afdc-de1ce0212ed0/C_C4HCX_04.png" alt="aws" width="150" height="150"/> </a> 
   
   <a href="https://www.credly.com/badges/236ece05-4fb6-4544-a99d-d6f9f0b85895?source=linked_in_profile" target="_blank" rel="noreferrer"> 
   <img src="https://images.credly.com/size/220x220/images/835c0ce6-bfa3-4dba-a1fc-c23e2b87e452/P_C4HCD_1905.png" alt="aws" width="150" height="150"/> </a> 
