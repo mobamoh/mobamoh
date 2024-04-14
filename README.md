@@ -4,7 +4,7 @@
 <h1 align="center">
   Mo Bamoh
   <br>
-  <i>ByteDevplr</i>
+  <i>ByteDevlpr</i>
 </h1>
 
 <p align="center">🧭 Curious Explorer</p>
