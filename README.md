@@ -21,7 +21,7 @@
 
 ## Contact
 - Website: [@mohamedbamoh](https://www.mohamedbamoh.com/)
-- Email: [mobamohbits@gmail.com](mailto:mobamohbits@gmail.com)
+- Email: [me@mohamedbamoh.com](mailto:me@mohamedbamoh.com)
 
 <!--
 <p>
