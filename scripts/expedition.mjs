@@ -477,10 +477,6 @@ function seaState(t, stats) {
 <rect width="${W}" height="${H}" fill="url(#sky)"/>
 ${chartFrame(W, H, t)}
 
-<g font-family="${MONO}" font-size="12" letter-spacing="2" fill="${t.inkDim}">
-  <text x="${X0}" y="64"><tspan fill="${t.blood}">ROUGH WATERS</tspan>  ·  A YEAR ADRIFT</text>
-  <text x="${X1}" y="64" text-anchor="end">DESTINATION  <tspan fill="${t.blood}">UNKNOWN</tspan></text>
-</g>
 
 <g clip-path="url(#plot)">
   <g>${slide(160, 14)}<path d="${far.fill}" fill="${t.sea[0]}" opacity="0.35"/></g>
@@ -506,7 +502,6 @@ ${chartFrame(W, H, t)}
     <animate attributeName="d" values="M0 -40H22V-26H0Z;M0 -40Q11 -43 22 -38V-25Q11 -28 0 -26Z;M0 -40H22V-26H0Z" dur="1.8s" repeatCount="indefinite"/>
   </path>
   <circle cx="11" cy="-34.5" r="3.2" fill="${t.ink}"/>
-  <text x="${cx > W / 2 ? -10 : 32}" y="-28" font-family="${SERIF}" font-size="14" font-style="italic" fill="${t.ink}" text-anchor="${cx > W / 2 ? "end" : "start"}">here be dragons</text>
 </g>
 
 <path d="M${X0} ${FLOOR}H${X1}" stroke="${t.ink}" stroke-width="1.2"/>

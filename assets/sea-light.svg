@@ -13,10 +13,6 @@
   <rect x="26" y="26" width="1128" height="278" fill="none" stroke="#33281C" stroke-width="0.8"/>
   <rect x="12" y="12" width="1156" height="306" fill="none" stroke="#33281C" stroke-width="0.6" opacity="0.6"/>
 
-<g font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" letter-spacing="2" fill="#8A7356">
-  <text x="70" y="64"><tspan fill="#B52E22">ROUGH WATERS</tspan>  ·  A YEAR ADRIFT</text>
-  <text x="1110" y="64" text-anchor="end">DESTINATION  <tspan fill="#B52E22">UNKNOWN</tspan></text>
-</g>
 
 <g clip-path="url(#plot)">
   <g><animateTransform attributeName="transform" type="translate" from="0 0" to="-160 0" dur="14s" repeatCount="indefinite"/><path d="M-120 232q40 -8 80 0t80 0q40 -8 80 0t80 0q40 -8 80 0t80 0q40 -8 80 0t80 0q40 -8 80 0t80 0q40 -8 80 0t80 0q40 -8 80 0t80 0q40 -8 80 0t80 0q40 -8 80 0t80 0V270H-120Z" fill="#2F5A66" opacity="0.35"/></g>
@@ -51,7 +47,6 @@
     <animate attributeName="d" values="M0 -40H22V-26H0Z;M0 -40Q11 -43 22 -38V-25Q11 -28 0 -26Z;M0 -40H22V-26H0Z" dur="1.8s" repeatCount="indefinite"/>
   </path>
   <circle cx="11" cy="-34.5" r="3.2" fill="#33281C"/>
-  <text x="-10" y="-28" font-family="Georgia, 'Iowan Old Style', 'Palatino Linotype', serif" font-size="14" font-style="italic" fill="#33281C" text-anchor="end">here be dragons</text>
 </g>
 
 <path d="M70 270H1110" stroke="#33281C" stroke-width="1.2"/>
