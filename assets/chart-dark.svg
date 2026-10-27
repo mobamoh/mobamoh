@@ -9,6 +9,8 @@
   <clipPath id="inner"><rect x="34" y="34" width="1112" height="532"/></clipPath>
   <clipPath id="beyond"><path d="M1184 268L1176.1 270.1L1173 277.9L1167.7 283.1L1158.4 283.6L1154.4 290.3L1148.6 294.8L1144 300.9L1134.9 301.6L1132.8 310.5L1129 317.5L1119.8 318.1L1119 328.6L1105.5 324.2L1106.1 336.3L1099.1 339.4L1090.6 340.9L1086 346.9L1081.9 353.5L1077.3 359.5L1073.4 366.3L1067.7 371L1058 371.1L1055 378.9L1051.5 386.2L1044.9 389.9L1039 394.4L1033.7 399.5L1031.6 408.5L1016.8 402.6L1013.5 410.1L1008 415L1004 421.7L995.3 423L992.6 431.2L988.6 437.9L982.8 442.5L974 443.5L967.5 447.3L968.1 459.4L956 456.7L949.6 460.5L944.9 466.4L944.6 477.4L935.9 478.7L929.3 482.3L923.9 487.4L922.4 497.1L905 488.1L905.8 500.3L899.5 504.4L895.5 511.1L893.1 519.7L888.9 526.1L875.6 522L879.8 538.3L867 534.7L861.4 539.5L847.2 534.3L851.1 550.2L846.5 556.3L850.3 572.1L834 564.4L831.7 573.1L825.3 577L819.8 582L814.2 586.8L800.5 582.1L800.5 593.5L799.9 604.2L790 604L1184 604Z"/></clipPath>
   <filter id="burn" x="-20%" y="-20%" width="140%" height="140%"><feGaussianBlur stdDeviation="3"/></filter>
+  <style>@font-face{font-family:"Explorer Title";src:url(data:font/woff;base64,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) format("woff")}</style>
+  <path id="ribbonLine" d="M506 214Q700 236 894 214"/>
 </defs>
 
 <rect width="1180" height="600" fill="url(#paper)"/>
@@ -47,7 +49,18 @@
   <text x="500" y="84">NO MAP · NO MASTER · NO PORT OF CALL</text>
 </g>
 <text x="497" y="156" font-family="Georgia, 'Iowan Old Style', 'Palatino Linotype', serif" font-size="66" font-weight="700" letter-spacing="1" fill="#ECE3CC">Mo Bamoh</text>
-<text x="500" y="194" font-family="Georgia, 'Iowan Old Style', 'Palatino Linotype', serif" font-size="20" font-style="italic" fill="#7E959C">curious explorer · sails where the maps run out</text>
+
+  <g stroke="#ECE3CC" stroke-width="1.2" stroke-linejoin="round">
+    <path d="M512 196L466 200L482 220L466 242L516 238Z" fill="#6E2119"/>
+    <path d="M888 196L934 200L918 220L934 242L884 238Z" fill="#6E2119"/>
+    <path d="M512 196L530 214L516 238Z" fill="#050608" opacity="0.6"/>
+    <path d="M888 196L870 214L884 238Z" fill="#050608" opacity="0.6"/>
+    <path d="M500 180Q700 204 900 180L900 222Q700 246 500 222Z" fill="#A8382C"/>
+  </g>
+  <path d="M506 186Q700 210 894 186M506 216Q700 240 894 216" fill="none" stroke="#F3E9D1" stroke-width="0.7" opacity="0.45"/>
+  <text font-family="'Explorer Title', Georgia, 'Iowan Old Style', 'Palatino Linotype', serif" font-size="36" letter-spacing="2" fill="#F3E9D1" text-anchor="middle">
+    <textPath href="#ribbonLine" startOffset="50%">Curious Explorer</textPath>
+  </text>
 
   <path d="M958 46V228" stroke="#ECE3CC" stroke-width="3" stroke-linecap="round"/>
   <circle cx="958" cy="44" r="4" fill="#DDA64C"/>
@@ -76,41 +89,22 @@
       <rect x="1037" y="99" width="6" height="3"/>
     </g>
   </g>
-<path d="M500 216H930" stroke="#ECE3CC" stroke-width="1"/>
-<path d="M500 220H930" stroke="#ECE3CC" stroke-width="0.5" opacity="0.6"/>
-<text x="500" y="248" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11" letter-spacing="2.5" fill="#7E959C">THE ARTICLES · SWORN ON THE OPEN SEA</text>
+<path d="M458 392C470 385 503 351.7 530 350C557 350 591.7 382 620 382C648.3 379.3 675 344 700 334C725 324 745 322 770 322C795 326.7 823.3 360 850 362C876.7 362 906.7 343.7 930 334C953.3 324.3 968.3 304 990 304C1011.7 304.3 1034.7 322.3 1060 336C1085.3 349.7 1128.3 377.7 1142 386" fill="none" stroke="#E0493B" stroke-width="2.4" stroke-dasharray="9 8" stroke-linecap="round">
+  <animate attributeName="stroke-dashoffset" from="0" to="-170" dur="7s" repeatCount="indefinite"/>
+</path>
+<circle cx="458" cy="392" r="5" fill="#0C1820" stroke="#E0493B" stroke-width="2.2"/>
 
-    <g>
-      <animate attributeName="opacity" values="0;0;1" keyTimes="0;0.500;1" dur="1.20s" fill="freeze"/>
-      <text x="526" y="286" font-family="Georgia, 'Iowan Old Style', 'Palatino Linotype', serif" font-size="17" font-weight="700" fill="#E0493B" text-anchor="end">I.</text>
-      <text x="540" y="286" font-family="Georgia, 'Iowan Old Style', 'Palatino Linotype', serif" font-size="19" fill="#ECE3CC">No map is final. Every border is a suggestion.</text>
+    <path d="M562 320C566 306 588 302 602 306C618 302 634 312 628 322C616 330 572 332 562 320Z" fill="#08121A" stroke="#ECE3CC" stroke-width="1.2"/>
+    <path d="M552 326c8 4 16 4 24 0M622 332c8 4 16 4 24 0" fill="none" stroke="#7E959C" stroke-width="0.9"/>
+    <path d="M596 306C598 292 602 282 600 272" fill="none" stroke="#ECE3CC" stroke-width="2"/>
+    <g fill="#ECE3CC">
+      <path d="M600 272c-6 -6 -16 -6 -22 2c8 -2 15 -1 22 -2Z"/>
+      <path d="M600 272c6 -6 16 -6 22 2c-8 -2 -15 -1 -22 -2Z"/>
+      <path d="M600 272c-2 -8 -10 -12 -18 -10c7 2 13 5 18 10Z"/>
+      <path d="M600 272c2 -8 10 -12 18 -10c-7 2 -13 5 -18 10Z"/>
     </g>
-    <g>
-      <animate attributeName="opacity" values="0;0;1" keyTimes="0;0.600;1" dur="1.50s" fill="freeze"/>
-      <text x="526" y="323" font-family="Georgia, 'Iowan Old Style', 'Palatino Linotype', serif" font-size="17" font-weight="700" fill="#E0493B" text-anchor="end">II.</text>
-      <text x="540" y="323" font-family="Georgia, 'Iowan Old Style', 'Palatino Linotype', serif" font-size="19" fill="#ECE3CC">Read the source — then the parts it forgot to mention.</text>
-    </g>
-    <g>
-      <animate attributeName="opacity" values="0;0;1" keyTimes="0;0.667;1" dur="1.80s" fill="freeze"/>
-      <text x="526" y="360" font-family="Georgia, 'Iowan Old Style', 'Palatino Linotype', serif" font-size="17" font-weight="700" fill="#E0493B" text-anchor="end">III.</text>
-      <text x="540" y="360" font-family="Georgia, 'Iowan Old Style', 'Palatino Linotype', serif" font-size="19" fill="#ECE3CC">Curiosity first. Permission, maybe later.</text>
-    </g>
-    <g>
-      <animate attributeName="opacity" values="0;0;1" keyTimes="0;0.714;1" dur="2.10s" fill="freeze"/>
-      <text x="526" y="397" font-family="Georgia, 'Iowan Old Style', 'Palatino Linotype', serif" font-size="17" font-weight="700" fill="#E0493B" text-anchor="end">IV.</text>
-      <text x="540" y="397" font-family="Georgia, 'Iowan Old Style', 'Palatino Linotype', serif" font-size="19" fill="#ECE3CC">Take apart what you love. Rebuild it stranger.</text>
-    </g>
-    <g>
-      <animate attributeName="opacity" values="0;0;1" keyTimes="0;0.750;1" dur="2.40s" fill="freeze"/>
-      <text x="526" y="434" font-family="Georgia, 'Iowan Old Style', 'Palatino Linotype', serif" font-size="17" font-weight="700" fill="#E0493B" text-anchor="end">V.</text>
-      <text x="540" y="434" font-family="Georgia, 'Iowan Old Style', 'Palatino Linotype', serif" font-size="19" fill="#ECE3CC">Break things to learn, never to harm.</text>
-    </g>
-
-<g font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="13" fill="#ECE3CC">
-  <text x="500" y="500"><tspan fill="#E0493B">$</tspan> ./set-sail --no-map --no-rules <tspan fill="#7E959C"># day 3,671 at sea</tspan></text>
-  <rect x="909.5999999999999" y="489" width="8" height="14" fill="#ECE3CC">
-    <animate attributeName="opacity" values="1;1;0;0" keyTimes="0;0.5;0.5;1" dur="1.1s" repeatCount="indefinite"/>
-  </rect>
+<g transform="translate(612 452)" stroke="#7E959C" stroke-width="1.1" fill="none" opacity="0.8">
+  <path d="M0 0L0 0L0.5 0.1L0.8 0.5L0.9 1.1L0.7 1.8L0.2 2.4L-0.7 2.8L-1.7 2.9L-2.8 2.6L-3.9 1.8L-4.8 0.7L-5.2 -0.8L-5.2 -2.5L-4.5 -4.3L-3.3 -5.9L-1.5 -7L0.7 -7.7L3.1 -7.6L5.5 -6.7L7.6 -5L9.2 -2.7L10.1 0.2L10 3.3L9 6.4L7 9.1L4.2 11.3L0.7 12.5L-3.2 12.6L-7 11.5L-10.4 9.2L-13.1 5.9L-14.8 1.9L-15.1 -2.7L-14.1 -7.2L-11.7 -11.4L-8 -14.8L-3.4 -17L1.9 -17.7L7.2 -16.8L12.1 -14.3L16.2 -10.3L19 -5.2L20.1 0.7L19.5 6.8L17 12.5L12.9 17.4L7.3 20.8L0.8 22.5L-6 22.2L-12.5 19.9L-18.2 15.6L-22.5 9.7L-24.8 2.7L-25 -4.9L-22.8 -12.2L-18.5 -18.8L-12.4 -23.9L-4.9 -26.9L3.4 -27.6L11.6 -25.8L19 -21.6L25 -15.3L28.8 -7.3"><animateTransform attributeName="transform" type="rotate" from="0" to="-360" dur="9s" repeatCount="indefinite"/></path>
 </g>
 
 <path d="M1184 268L1176.1 270.1L1173 277.9L1167.7 283.1L1158.4 283.6L1154.4 290.3L1148.6 294.8L1144 300.9L1134.9 301.6L1132.8 310.5L1129 317.5L1119.8 318.1L1119 328.6L1105.5 324.2L1106.1 336.3L1099.1 339.4L1090.6 340.9L1086 346.9L1081.9 353.5L1077.3 359.5L1073.4 366.3L1067.7 371L1058 371.1L1055 378.9L1051.5 386.2L1044.9 389.9L1039 394.4L1033.7 399.5L1031.6 408.5L1016.8 402.6L1013.5 410.1L1008 415L1004 421.7L995.3 423L992.6 431.2L988.6 437.9L982.8 442.5L974 443.5L967.5 447.3L968.1 459.4L956 456.7L949.6 460.5L944.9 466.4L944.6 477.4L935.9 478.7L929.3 482.3L923.9 487.4L922.4 497.1L905 488.1L905.8 500.3L899.5 504.4L895.5 511.1L893.1 519.7L888.9 526.1L875.6 522L879.8 538.3L867 534.7L861.4 539.5L847.2 534.3L851.1 550.2L846.5 556.3L850.3 572.1L834 564.4L831.7 573.1L825.3 577L819.8 582L814.2 586.8L800.5 582.1L800.5 593.5L799.9 604.2L790 604L1184 604Z" fill="url(#night)"/>
@@ -119,9 +113,18 @@
   <animate attributeName="opacity" values="0.55;0.3;0.6;0.45;0.55" dur="3.2s" repeatCount="indefinite"/>
 </path>
 <path d="M1184 268L1176.1 270.1L1173 277.9L1167.7 283.1L1158.4 283.6L1154.4 290.3L1148.6 294.8L1144 300.9L1134.9 301.6L1132.8 310.5L1129 317.5L1119.8 318.1L1119 328.6L1105.5 324.2L1106.1 336.3L1099.1 339.4L1090.6 340.9L1086 346.9L1081.9 353.5L1077.3 359.5L1073.4 366.3L1067.7 371L1058 371.1L1055 378.9L1051.5 386.2L1044.9 389.9L1039 394.4L1033.7 399.5L1031.6 408.5L1016.8 402.6L1013.5 410.1L1008 415L1004 421.7L995.3 423L992.6 431.2L988.6 437.9L982.8 442.5L974 443.5L967.5 447.3L968.1 459.4L956 456.7L949.6 460.5L944.9 466.4L944.6 477.4L935.9 478.7L929.3 482.3L923.9 487.4L922.4 497.1L905 488.1L905.8 500.3L899.5 504.4L895.5 511.1L893.1 519.7L888.9 526.1L875.6 522L879.8 538.3L867 534.7L861.4 539.5L847.2 534.3L851.1 550.2L846.5 556.3L850.3 572.1L834 564.4L831.7 573.1L825.3 577L819.8 582L814.2 586.8L800.5 582.1L800.5 593.5L799.9 604.2L790 604" fill="none" stroke="#2A1A10" stroke-width="2.4"/>
+<path d="M458 392C470 385 503 351.7 530 350C557 350 591.7 382 620 382C648.3 379.3 675 344 700 334C725 324 745 322 770 322C795 326.7 823.3 360 850 362C876.7 362 906.7 343.7 930 334C953.3 324.3 968.3 304 990 304C1011.7 304.3 1034.7 322.3 1060 336C1085.3 349.7 1128.3 377.7 1142 386" fill="none" stroke="#DDA64C" stroke-width="2.4" stroke-dasharray="9 8" stroke-linecap="round" clip-path="url(#beyond)">
+  <animate attributeName="stroke-dashoffset" from="0" to="-170" dur="7s" repeatCount="indefinite"/>
+</path>
+<g transform="translate(1142 386)" stroke-linecap="round">
+  <path d="M-11 -11L11 11M11 -11L-11 11" stroke="#DDA64C" stroke-width="10" opacity="0.5" filter="url(#burn)">
+    <animate attributeName="opacity" values="0.25;0.75;0.25" dur="2.4s" repeatCount="indefinite"/>
+  </path>
+  <path d="M-11 -11L11 11M11 -11L-11 11" stroke="#F3C969" stroke-width="4.5"/>
+</g>
 <g font-family="Georgia, 'Iowan Old Style', 'Palatino Linotype', serif" font-style="italic" fill="#E9E1CB" text-anchor="end">
-  <text x="1148" y="430" font-size="16">the map ends here.</text>
-  <text x="1148" y="454" font-size="16" fill="#F08A3C">we don't.</text>
+  <text x="1148" y="444" font-size="16">the map ends here.</text>
+  <text x="1148" y="468" font-size="16" fill="#F08A3C">we don't.</text>
 </g>
 
 <g><animateTransform attributeName="transform" type="translate" from="0 0" to="-96 0" dur="9s" repeatCount="indefinite"/><path d="M-96 532q24 -5 48 0t48 0q24 -5 48 0t48 0q24 -5 48 0t48 0q24 -5 48 0t48 0q24 -5 48 0t48 0q24 -5 48 0t48 0q24 -5 48 0t48 0q24 -5 48 0t48 0q24 -5 48 0t48 0q24 -5 48 0t48 0q24 -5 48 0t48 0q24 -5 48 0t48 0q24 -5 48 0t48 0q24 -5 48 0t48 0q24 -5 48 0t48 0V610H-96Z" fill="#0F2E3A" opacity="0.75"/></g>

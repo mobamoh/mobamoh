@@ -7,7 +7,7 @@
 </a>
 
 <p align="center">
-  <a href="https://www.mohamedbamoh.com/">🏴‍☠️ mohamedbamoh.com</a>
+  <a href="https://www.mohamedbamoh.com/">🏴‍☠️ Portfolio</a>
   &nbsp;·&nbsp;
   <a href="https://www.linkedin.com/in/mohamedbamoh/">⚓ LinkedIn</a>
   &nbsp;·&nbsp;

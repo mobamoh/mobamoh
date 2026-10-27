@@ -3,18 +3,15 @@
 // swell (sea-*.svg). Zero dependencies — run with `node scripts/expedition.mjs`.
 // The workflow in .github/workflows/expedition.yml re-plots them daily.
 
-import { writeFile, mkdir } from "node:fs/promises";
+import { readFile, writeFile, mkdir } from "node:fs/promises";
 
 const USER = "mobamoh";
 const NAME = "Mo Bamoh";
-const MOTTO = "curious explorer · sails where the maps run out";
-const ARTICLES = [
-  "No map is final. Every border is a suggestion.",
-  "Read the source — then the parts it forgot to mention.",
-  "Curiosity first. Permission, maybe later.",
-  "Take apart what you love. Rebuild it stranger.",
-  "Break things to learn, never to harm.",
-];
+const TITLE = "Curious Explorer";
+// A subset of Pirata One (SIL OFL, see assets/fonts/OFL.txt) holding only the
+// title's letters, embedded so it renders inside GitHub's <img> sandbox.
+// Changing TITLE means re-subsetting the font for any new letters.
+const TITLE_FONT = (await readFile(new URL("../assets/fonts/explorer-title.woff", import.meta.url))).toString("base64");
 const OUT = new URL("../assets/", import.meta.url);
 
 const THEMES = {
@@ -31,6 +28,9 @@ const THEMES = {
     ember: "#F08A3C",
     flag: "#050608",
     bone: "#ECE3CC",
+    ribbon: "#A8382C",
+    ribbonDark: "#6E2119",
+    ribbonText: "#F3E9D1",
     rose: ["#ECE3CC", "#234A57"],
     sea: ["#0F2E3A", "#164556", "#1B5466"],
     foam: "#9FC9D1",
@@ -48,6 +48,9 @@ const THEMES = {
     ember: "#E07A2A",
     flag: "#1C1712",
     bone: "#F3E9D1",
+    ribbon: "#A8382C",
+    ribbonDark: "#73231A",
+    ribbonText: "#FBF3E0",
     rose: ["#FAF3E2", "#365F6B"],
     sea: ["#2F5A66", "#24505D", "#1A3F4B"],
     foam: "#E9F1EE",
@@ -59,22 +62,8 @@ const MONO = "ui-monospace, SFMono-Regular, Menlo, Consolas, monospace";
 const f = (n) => Math.round(n * 10) / 10;
 const esc = (s) => String(s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
 const fmt = (n) => n.toLocaleString("en-US");
-const ROMAN = ["I", "II", "III", "IV", "V", "VI", "VII"];
 
 // ---------- data ----------
-
-async function fetchProfile() {
-  try {
-    const res = await fetch(`https://api.github.com/users/${USER}`, {
-      headers: process.env.GITHUB_TOKEN ? { Authorization: `Bearer ${process.env.GITHUB_TOKEN}` } : {},
-    });
-    if (!res.ok) throw new Error(res.status);
-    return await res.json();
-  } catch (err) {
-    console.warn("profile fetch failed:", err.message);
-    return { created_at: new Date().toISOString() };
-  }
-}
 
 // The public contributions page lists each day as a cell with an id, and a
 // tooltip pointing at that id with the human-readable count.
@@ -324,9 +313,24 @@ function jollyRoger(x, y, t) {
   </g>`;
 }
 
-function seaChart(t, profile) {
+// A cartographer's ribbon banner, the kind that carries a map's title.
+function ribbon(t) {
+  return `
+  <g stroke="${t.ink}" stroke-width="1.2" stroke-linejoin="round">
+    <path d="M512 196L466 200L482 220L466 242L516 238Z" fill="${t.ribbonDark}"/>
+    <path d="M888 196L934 200L918 220L934 242L884 238Z" fill="${t.ribbonDark}"/>
+    <path d="M512 196L530 214L516 238Z" fill="${t.flag}" opacity="0.6"/>
+    <path d="M888 196L870 214L884 238Z" fill="${t.flag}" opacity="0.6"/>
+    <path d="M500 180Q700 204 900 180L900 222Q700 246 500 222Z" fill="${t.ribbon}"/>
+  </g>
+  <path d="M506 186Q700 210 894 186M506 216Q700 240 894 216" fill="none" stroke="${t.ribbonText}" stroke-width="0.7" opacity="0.45"/>
+  <text font-family="'Explorer Title', ${SERIF}" font-size="36" letter-spacing="2" fill="${t.ribbonText}" text-anchor="middle">
+    <textPath href="#ribbonLine" startOffset="50%">${esc(TITLE)}</textPath>
+  </text>`;
+}
+
+function seaChart(t) {
   const W = 1180, H = 600;
-  const days = Math.floor((Date.now() - new Date(profile.created_at)) / 864e5);
   const rand = rng(0x5ea);
 
   const topo = contours(W, H, 0xb4a0 + 7).map(({ d, index }) =>
@@ -350,15 +354,21 @@ function seaChart(t, profile) {
   }
 
   const LX = 500;
-  const articles = ARTICLES.map((a, i) => {
-    const y = 286 + i * 37;
-    return `
-    <g>
-      <animate attributeName="opacity" values="0;0;1" keyTimes="0;${((0.6 + i * 0.3) / (1.2 + i * 0.3)).toFixed(3)};1" dur="${(1.2 + i * 0.3).toFixed(2)}s" fill="freeze"/>
-      <text x="${LX + 26}" y="${y}" font-family="${SERIF}" font-size="17" font-weight="700" fill="${t.blood}" text-anchor="end">${ROMAN[i]}.</text>
-      <text x="${LX + 40}" y="${y}" font-family="${SERIF}" font-size="19" fill="${t.ink}">${esc(a)}</text>
+  // A treasure-map route from the compass, across the chart and out through
+  // the torn edge — the X sits past the end of the map.
+  const route = smoothPath([[458, 392], [530, 350], [620, 382], [700, 334], [770, 322], [850, 362], [930, 334], [990, 304], [1060, 336], [1142, 386]]);
+  const island = (x, y) => `
+    <path d="M${x - 34} ${y + 6}C${x - 30} ${y - 8} ${x - 8} ${y - 12} ${x + 6} ${y - 8}C${x + 22} ${y - 12} ${x + 38} ${y - 2} ${x + 32} ${y + 8}C${x + 20} ${y + 16} ${x - 24} ${y + 18} ${x - 34} ${y + 6}Z" fill="${t.paperEdge}" stroke="${t.ink}" stroke-width="1.2"/>
+    <path d="M${x - 44} ${y + 12}c8 4 16 4 24 0M${x + 26} ${y + 18}c8 4 16 4 24 0" fill="none" stroke="${t.inkDim}" stroke-width="0.9"/>
+    <path d="M${x} ${y - 8}C${x + 2} ${y - 22} ${x + 6} ${y - 32} ${x + 4} ${y - 42}" fill="none" stroke="${t.ink}" stroke-width="2"/>
+    <g fill="${t.ink}">
+      <path d="M${x + 4} ${y - 42}c-6 -6 -16 -6 -22 2c8 -2 15 -1 22 -2Z"/>
+      <path d="M${x + 4} ${y - 42}c6 -6 16 -6 22 2c-8 -2 -15 -1 -22 -2Z"/>
+      <path d="M${x + 4} ${y - 42}c-2 -8 -10 -12 -18 -10c7 2 13 5 18 10Z"/>
+      <path d="M${x + 4} ${y - 42}c2 -8 10 -12 18 -10c-7 2 -13 5 -18 10Z"/>
     </g>`;
-  }).join("");
+  let spiral = "M0 0";
+  for (let a = 0; a < Math.PI * 6; a += 0.3) spiral += `L${f(Math.cos(a) * a * 1.6)} ${f(Math.sin(a) * a * 1.6)}`;
 
   const back = swell(0, W, 532, 5, 96, H + 10);
   const mid = swell(0, W, 546, 7, 140, H + 10);
@@ -376,6 +386,8 @@ function seaChart(t, profile) {
   <clipPath id="inner"><rect x="34" y="34" width="${W - 68}" height="${H - 68}"/></clipPath>
   <clipPath id="beyond"><path d="${tear}"/></clipPath>
   <filter id="burn" x="-20%" y="-20%" width="140%" height="140%"><feGaussianBlur stdDeviation="3"/></filter>
+  <style>@font-face{font-family:"Explorer Title";src:url(data:font/woff;base64,${TITLE_FONT}) format("woff")}</style>
+  <path id="ribbonLine" d="M506 214Q700 236 894 214"/>
 </defs>
 
 <rect width="${W}" height="${H}" fill="url(#paper)"/>
@@ -392,18 +404,15 @@ ${lostCompass(240, 262, 148, t)}
   <text x="${LX}" y="84">NO MAP · NO MASTER · NO PORT OF CALL</text>
 </g>
 <text x="${LX - 3}" y="156" font-family="${SERIF}" font-size="66" font-weight="700" letter-spacing="1" fill="${t.ink}">${esc(NAME)}</text>
-<text x="${LX}" y="194" font-family="${SERIF}" font-size="20" font-style="italic" fill="${t.inkDim}">${esc(MOTTO)}</text>
+${ribbon(t)}
 ${jollyRoger(958, 60, t)}
-<path d="M${LX} 216H${930}" stroke="${t.ink}" stroke-width="1"/>
-<path d="M${LX} 220H${930}" stroke="${t.ink}" stroke-width="0.5" opacity="0.6"/>
-<text x="${LX}" y="248" font-family="${MONO}" font-size="11" letter-spacing="2.5" fill="${t.inkDim}">THE ARTICLES · SWORN ON THE OPEN SEA</text>
-${articles}
-
-<g font-family="${MONO}" font-size="13" fill="${t.ink}">
-  <text x="${LX}" y="500"><tspan fill="${t.blood}">$</tspan> ./set-sail --no-map --no-rules <tspan fill="${t.inkDim}"># day ${fmt(days)} at sea</tspan></text>
-  <rect x="${LX + 4 + 52 * 7.8}" y="489" width="8" height="14" fill="${t.ink}">
-    <animate attributeName="opacity" values="1;1;0;0" keyTimes="0;0.5;0.5;1" dur="1.1s" repeatCount="indefinite"/>
-  </rect>
+<path d="${route}" fill="none" stroke="${t.blood}" stroke-width="2.4" stroke-dasharray="9 8" stroke-linecap="round">
+  <animate attributeName="stroke-dashoffset" from="0" to="-170" dur="7s" repeatCount="indefinite"/>
+</path>
+<circle cx="458" cy="392" r="5" fill="${t.paper}" stroke="${t.blood}" stroke-width="2.2"/>
+${island(596, 314)}
+<g transform="translate(612 452)" stroke="${t.inkDim}" stroke-width="1.1" fill="none" opacity="0.8">
+  <path d="${spiral}"><animateTransform attributeName="transform" type="rotate" from="0" to="-360" dur="9s" repeatCount="indefinite"/></path>
 </g>
 
 <path d="${tear}" fill="url(#night)"/>
@@ -412,9 +421,18 @@ ${articles}
   <animate attributeName="opacity" values="0.55;0.3;0.6;0.45;0.55" dur="3.2s" repeatCount="indefinite"/>
 </path>
 <path d="${edgeLine}" fill="none" stroke="#2A1A10" stroke-width="2.4"/>
+<path d="${route}" fill="none" stroke="${t.brass}" stroke-width="2.4" stroke-dasharray="9 8" stroke-linecap="round" clip-path="url(#beyond)">
+  <animate attributeName="stroke-dashoffset" from="0" to="-170" dur="7s" repeatCount="indefinite"/>
+</path>
+<g transform="translate(1142 386)" stroke-linecap="round">
+  <path d="M-11 -11L11 11M11 -11L-11 11" stroke="${t.brass}" stroke-width="10" opacity="0.5" filter="url(#burn)">
+    <animate attributeName="opacity" values="0.25;0.75;0.25" dur="2.4s" repeatCount="indefinite"/>
+  </path>
+  <path d="M-11 -11L11 11M11 -11L-11 11" stroke="#F3C969" stroke-width="4.5"/>
+</g>
 <g font-family="${SERIF}" font-style="italic" fill="#E9E1CB" text-anchor="end">
-  <text x="1148" y="430" font-size="16">the map ends here.</text>
-  <text x="1148" y="454" font-size="16" fill="${t.ember}">we don't.</text>
+  <text x="1148" y="444" font-size="16">the map ends here.</text>
+  <text x="1148" y="468" font-size="16" fill="${t.ember}">we don't.</text>
 </g>
 
 <g>${slide(96, 9)}<path d="${back.fill}" fill="${t.sea[0]}" opacity="0.75"/></g>
@@ -512,11 +530,11 @@ ${chartFrame(W, H, t)}
 
 // ---------- main ----------
 
-const [profile, days] = await Promise.all([fetchProfile(), fetchDays()]);
+const days = await fetchDays();
 const stats = summarize(days);
 await mkdir(OUT, { recursive: true });
 for (const [name, t] of Object.entries(THEMES)) {
-  await writeFile(new URL(`chart-${name}.svg`, OUT), seaChart(t, profile));
+  await writeFile(new URL(`chart-${name}.svg`, OUT), seaChart(t));
   await writeFile(new URL(`sea-${name}.svg`, OUT), seaState(t, stats));
 }
 console.log(`plotted ${days.length} days, ${stats.total} contributions, biggest wave ${stats.crest.total} (${stats.crest.start})`);
