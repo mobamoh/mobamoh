@@ -454,7 +454,6 @@ function seaState(t, stats) {
 
   const ci = weeks.indexOf(stats.crest);
   const [cx, cy] = pts[ci];
-  const crestDate = new Date(stats.crest.start).toLocaleString("en-US", { month: "short", day: "numeric", timeZone: "UTC" });
 
   let months = "", lastMonth = -1;
   weeks.forEach((w, i) => {
@@ -467,7 +466,7 @@ function seaState(t, stats) {
     lastMonth = m;
   });
 
-  return `<svg xmlns="http://www.w3.org/2000/svg" width="${W}" height="${H}" viewBox="0 0 ${W} ${H}" role="img" aria-label="Sea state: ${fmt(stats.total)} contributions over the last year, drawn as waves">
+  return `<svg xmlns="http://www.w3.org/2000/svg" width="${W}" height="${H}" viewBox="0 0 ${W} ${H}" role="img" aria-label="A pirate ship sailing a year of rough waters">
 <defs>
   <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
     <stop offset="0%" stop-color="${t.paperEdge}"/><stop offset="100%" stop-color="${t.paper}"/>
@@ -479,8 +478,8 @@ function seaState(t, stats) {
 ${chartFrame(W, H, t)}
 
 <g font-family="${MONO}" font-size="12" letter-spacing="2" fill="${t.inkDim}">
-  <text x="${X0}" y="64"><tspan fill="${t.blood}">SEA STATE</tspan>  ·  ${fmt(stats.total)} CONTRIBUTIONS WEATHERED THIS YEAR</text>
-  <text x="${X1}" y="64" text-anchor="end">LONGEST VOYAGE  ${stats.best} DAYS</text>
+  <text x="${X0}" y="64"><tspan fill="${t.blood}">ROUGH WATERS</tspan>  ·  A YEAR ADRIFT</text>
+  <text x="${X1}" y="64" text-anchor="end">DESTINATION  <tspan fill="${t.blood}">UNKNOWN</tspan></text>
 </g>
 
 <g clip-path="url(#plot)">
@@ -507,7 +506,7 @@ ${chartFrame(W, H, t)}
     <animate attributeName="d" values="M0 -40H22V-26H0Z;M0 -40Q11 -43 22 -38V-25Q11 -28 0 -26Z;M0 -40H22V-26H0Z" dur="1.8s" repeatCount="indefinite"/>
   </path>
   <circle cx="11" cy="-34.5" r="3.2" fill="${t.ink}"/>
-  <text x="${cx > W / 2 ? -10 : 32}" y="-28" font-family="${SERIF}" font-size="14" font-style="italic" fill="${t.ink}" text-anchor="${cx > W / 2 ? "end" : "start"}">biggest wave · ${stats.crest.total} in the week of ${crestDate}</text>
+  <text x="${cx > W / 2 ? -10 : 32}" y="-28" font-family="${SERIF}" font-size="14" font-style="italic" fill="${t.ink}" text-anchor="${cx > W / 2 ? "end" : "start"}">here be dragons</text>
 </g>
 
 <path d="M${X0} ${FLOOR}H${X1}" stroke="${t.ink}" stroke-width="1.2"/>
